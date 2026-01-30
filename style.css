@@ -1,0 +1,313 @@
+/* Background wrapper */
+.bg-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+}
+/* Brand title */
+.title {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 40px;
+    font-style: oblique;
+}
+.navbar {
+    height: 65px;
+    background-color: rgb(184, 93, 184) !important;
+    border-bottom: 2px solid #d0bb8a;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+}
+.logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 5px;
+    margin-left: 25px;
+}
+.hero {
+    position: relative;
+    height: 90vh;
+    width: 100%;
+}
+.bg-image {
+    display: block;
+    height: 90vh;
+    width: auto;
+    object-fit: contain;
+    object-position: right center;
+    /* IMPORTANT: remove centering */
+    margin-right: 0;
+    margin-left: auto;
+}
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 60px; /* LEFT SIDE */
+    transform: translateY(-50%);
+    color: rgb(29, 76, 90);
+    max-width: 400px;
+}
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+.hero-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 28px;
+    background-color: rgb(184, 93, 184);
+    color: white !important;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.hero-btn:hover {
+    background-color: #9b4fa3;
+    color: white;
+    text-decoration: none;
+}
+/* Carousel images */
+.img {
+    height: 80vh; /* keeps them tall, almost full screen height */
+    width: 200vw; /* fits neatly inside the column */
+    object-fit: cover; /* crops edges but keeps proportions */
+}
+#designs {
+    background-color: #fdf6f0; /* Light beige */
+    background-size: cover;
+    min-height: 100vh;
+    width: 100vw;
+    padding: 40px 20px;
+    padding-bottom: 40px;
+}
+.design-card {
+    background-color: white;
+    padding: 16px;
+    margin: 30px;
+    border-radius: 15px;
+}
+.cardimages {
+    height: 350px;
+    width: 400px;
+}
+.profile {
+    text-align: center;
+    padding: 25px;
+}
+#designer {
+    position: relative;
+    padding: 40px 20px;
+    background-color: #f6f1ec; /* soft fashion beige */
+    overflow: hidden;
+}
+.designer-image {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%; /* makes it circular */
+    object-fit: cover; /* ensures image fits nicely */
+    margin-right: 15px;
+    position: relative; /* stacking context */
+}
+
+
+
+
+/* ================= EDITORIAL BACKGROUND (CSS ONLY) ================= */
+
+/* Global safety */
+body {
+    overflow-x: hidden;
+}
+
+/* ---------- HERO SECTION BACKGROUND ---------- */
+.bg-container::before {
+    content: "";
+    position: absolute;
+    top: -250px;
+    left: -300px;
+    width: 900px;
+    height: 900px;
+    border: 22px solid rgba(184, 93, 184, 0.25);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.bg-container::after {
+    content: "";
+    position: absolute;
+    bottom: -300px;
+    right: -250px;
+    width: 750px;
+    height: 750px;
+    border: 18px solid rgba(255, 170, 120, 0.25);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+
+/* ---------- DESIGNS SECTION DECOR ---------- */
+#designs::before {
+    content: "";
+    position: absolute;
+    top: 120px;
+    left: -120px;
+    width: 260px;
+    height: 260px;
+    background: rgba(230, 180, 210, 0.45);
+    border-radius: 55% 45% 60% 40%;
+    z-index: 0;
+}
+
+#designs::after {
+    content: "";
+    position: absolute;
+    bottom: 80px;
+    right: 60px;
+    width: 140px;
+    height: 140px;
+    background-image: radial-gradient(#000 1.6px, transparent 1.6px);
+    background-size: 14px 14px;
+    opacity: 0.08;
+    z-index: 0;
+}
+
+#designs {
+    position: relative;
+}
+
+/* ---------- DESIGNER SECTION DECOR ---------- */
+#designer::before {
+    content: "";
+    position: absolute;
+    top: 40px;
+    right: -60px;
+    width: 0;
+    height: 0;
+    border-left: 70px solid transparent;
+    border-right: 70px solid transparent;
+    border-bottom: 130px solid rgba(120, 180, 200, 0.35);
+    z-index: 0;
+}
+
+#designer::after {
+    content: "";
+    position: absolute;
+    bottom: -120px;
+    left: -150px;
+    width: 380px;
+    height: 380px;
+    border: 16px solid rgba(155, 79, 163, 0.22);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+#designer * {
+    position: relative;
+    z-index: 2;
+}
+
+/* ---------- EXTRA SMALL UNIQUE DETAILS ---------- */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 25%;
+    right: 15%;
+    width: 90px;
+    height: 90px;
+    border: 6px solid rgba(255, 200, 160, 0.45);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    bottom: 18%;
+    left: 12%;
+    width: 12px;
+    height: 12px;
+    background: rgba(184, 93, 184, 0.6);
+    border-radius: 50%;
+    box-shadow:
+        20px 10px rgba(184,93,184,0.4),
+        40px 20px rgba(184,93,184,0.3),
+        60px 30px rgba(184,93,184,0.2);
+    z-index: 0;
+}
+/* ===== SOFT EDITORIAL BACKGROUND ===== */
+
+/* Page base */
+body {
+    margin: 0;
+    background: linear-gradient(
+        180deg,
+        #fdf7f4 0%,
+        #f6ebe7 40%,
+        #fdf7f4 100%
+    );
+    overflow-x: hidden;
+    font-family: "Georgia", serif;
+}
+
+
+/* Flowing pastel waves */
+.bg-container::before {
+    content: "";
+    position: absolute;
+    top: -200px;
+    left: -200px;
+    width: 140%;
+    height: 500px;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(184, 93, 184, 0.18),
+        transparent 70%
+    );
+    transform: rotate(-4deg);
+    z-index: 0;
+}
+
+.bg-container::after {
+    content: "";
+    position: absolute;
+    bottom: -250px;
+    left: -100px;
+    width: 140%;
+    height: 600px;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(255, 200, 160, 0.22),
+        transparent 70%
+    );
+    transform: rotate(3deg);
+    z-index: 0;
+}
+
+
+/* Subtle grain texture */
+.bg-grain {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image: radial-gradient(
+        rgba(0, 0, 0, 0.05) 1px,
+        transparent 1px
+    );
+    background-size: 18px 18px;
+    opacity: 0.08;
+    z-index: 1;
+}
+
+
+/* Keep content above background */
+.hero-content,
+.designs-content,
+.designer-content {
+    position: relative;
+    z-index: 2;
+}
+
